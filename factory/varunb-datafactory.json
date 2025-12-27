@@ -1,0 +1,9 @@
+{
+	"name": "varunb-datafactory",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ddf6c948-9aa0-40a2-b323-c22bcf04b9d0",
+		"tenantId": "fc7930c5-a6bf-4739-8372-d865fc0f5a46"
+	}
+}
