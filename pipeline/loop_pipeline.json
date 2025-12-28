@@ -52,6 +52,24 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "Setvariable1",
+				"description": "for getting current date and storing",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "current_time",
+					"value": {
+						"value": "@utcNow()",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -72,6 +90,11 @@
 			},
 			"file": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"current_time": {
+				"type": "String"
 			}
 		},
 		"annotations": []
