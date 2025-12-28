@@ -6,6 +6,8 @@
 				"name": "Copydata",
 				"description": "Copying data from SQL database to Data lake",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -20,7 +22,8 @@
 				}
 			},
 			{
-				"name": "CdcLookup",
+				"name": "Lookup",
+				"description": "for fetching last CDC date",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -44,7 +47,7 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "Json_cdc",
+						"referenceName": "Json1",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -59,6 +62,15 @@
 				"type": "string"
 			},
 			"cdc_col": {
+				"type": "string"
+			},
+			"container": {
+				"type": "string"
+			},
+			"folder": {
+				"type": "string"
+			},
+			"file": {
 				"type": "string"
 			}
 		},
