@@ -36,11 +36,11 @@
 								"type": "Expression"
 							},
 							"folder": {
-								"value": "@pipeline().parameters.folder",
+								"value": "@pipeline().parameters.srcFolder",
 								"type": "Expression"
 							},
 							"file": {
-								"value": "@pipeline().parameters.file",
+								"value": "@pipeline().parameters.srcFile",
 								"type": "Expression"
 							}
 						}
@@ -169,9 +169,6 @@
 				"type": "string"
 			},
 			"sinkFolder": {
-				"type": "string"
-			},
-			"sinkFile": {
 				"type": "string"
 			}
 		},
