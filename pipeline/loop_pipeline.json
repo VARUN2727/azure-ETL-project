@@ -96,7 +96,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "SELECT * FROM @{pipeline().parameters.schema}.@{pipeline().parameters.table} WHERE @{pipeline().parameters.cdc_col}>activity('lastCdc').output.value[0].CDC",
+							"value": "SELECT * FROM @{pipeline().parameters.schema}.@{pipeline().parameters.table} WHERE @{pipeline().parameters.cdc_col}>'@{activity('lastCdc').output.value[0].CDC}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
