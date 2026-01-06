@@ -3,27 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copydata",
-				"description": "Copying data from SQL database to Data lake",
-				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"enableStaging": false
-				}
-			},
-			{
-				"name": "Lookup",
-				"description": "for fetching last CDC date",
+				"name": "lastCdc",
+				"description": "for getting the max cdc value",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -47,28 +28,24 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "Json1",
-						"type": "DatasetReference"
+						"referenceName": "Json",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@pipeline().parameters.container",
+								"type": "Expression"
+							},
+							"folder": {
+								"value": "@pipeline().parameters.folder",
+								"type": "Expression"
+							},
+							"file": {
+								"value": "@pipeline().parameters.file",
+								"type": "Expression"
+							}
+						}
 					},
 					"firstRowOnly": false
-				}
-			},
-			{
-				"name": "Setvariable1",
-				"description": "for getting current date and storing",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "current_time",
-					"value": {
-						"value": "@utcNow()",
-						"type": "Expression"
-					}
 				}
 			}
 		],
