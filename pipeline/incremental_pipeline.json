@@ -1,5 +1,5 @@
 {
-	"name": "loop_pipeline",
+	"name": "incremental_pipeline",
 	"properties": {
 		"activities": [
 			{
