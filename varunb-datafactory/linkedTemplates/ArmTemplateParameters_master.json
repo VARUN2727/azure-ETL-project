@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "varunb-datafactory"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqltoAdf_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://varunstorageaccount.dfs.core.windows.net/"
+		},
+		"AzureSqltoAdf_properties_typeProperties_server": {
+			"value": "varunazureprojectserver.database.windows.net"
+		},
+		"AzureSqltoAdf_properties_typeProperties_database": {
+			"value": "azureprojectdatabase"
+		},
+		"AzureSqltoAdf_properties_typeProperties_userName": {
+			"value": "adminvarun"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
